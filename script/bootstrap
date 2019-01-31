@@ -1,0 +1,3 @@
+#!/bin/bash -ex
+
+go get -u github.com/dvyukov/go-fuzz/...

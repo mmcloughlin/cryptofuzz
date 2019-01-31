@@ -1,0 +1,7 @@
+#!/bin/bash -ex
+
+target=$1
+
+source script/lib.sh
+
+go-fuzz-build -o $(bin_file ${target}) $(target_import_path ${target})
