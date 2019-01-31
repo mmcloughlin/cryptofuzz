@@ -1,0 +1,2 @@
+# cryptofuzz
+Fuzzing Go crypto
