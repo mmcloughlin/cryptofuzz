@@ -82,6 +82,15 @@ func Fuzz(data []byte) int {
 		panic("mismatch")
 	}
 
+	// Roundtrip.
+	roundtrip, err := agcm.Open(nil, nonce, aciphertext, nil)
+	if err != nil {
+		panic(err.Error())
+	}
+	if !bytes.Equal(roundtrip, plaintext) {
+		panic("roundtrip failed")
+	}
+
 	return 1
 }
 
