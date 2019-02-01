@@ -1,4 +1,4 @@
-package aesgcm
+package chacha20poly1305
 
 import (
 	"bytes"
