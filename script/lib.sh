@@ -1,12 +1,12 @@
+function local_path()
+{
+    echo -n "target/$1"
+}
+
 function target_import_path()
 {
     local repo='github.com/mmcloughlin/cryptofuzz'
-    echo -n "${repo}/$1"
-}
-
-function local_path()
-{
-    echo -n $1
+    echo -n "${repo}/$(local_path $1)"
 }
 
 function bin_file()
