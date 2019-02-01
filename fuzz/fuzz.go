@@ -20,7 +20,7 @@ func Hash(data []byte, a, b hash.Hash) int {
 
 	// Compare checksums.
 	asum := a.Sum(nil)
-	bsum := a.Sum(nil)
+	bsum := b.Sum(nil)
 
 	if !bytes.Equal(asum, bsum) {
 		panic("mismatch")
