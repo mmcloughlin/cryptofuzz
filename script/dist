@@ -1,0 +1,47 @@
+#!/bin/bash -ex
+
+source script/lib.sh
+
+# Parameters ----------------------------------------------------------------
+
+name="cryptofuzz"
+version=$(git describe --always --dirty)
+export GOARCH=${GOARCH:-amd64}
+export GOOS=${GOOS:-$(go env GOOS)}
+
+# Prepare Workspace ---------------------------------------------------------
+
+workdir=$(mktemp -d)
+pkgdir="${workdir}/${name}"
+bindir="${pkgdir}/bin"
+
+mkdir -p ${workdir} ${pkgdir} ${bindir}
+
+# Package go-fuzz -----------------------------------------------------------
+
+go build -o ${bindir}/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz
+
+# Build and Package Targets -------------------------------------------------
+
+for target in $(targets); do
+    ./script/build ${target}
+
+    targetdir="${pkgdir}/target/${target}"
+    mkdir -p ${targetdir}
+    for file in $(fuzz_files ${target}); do
+        cp -v -r ${file} ${targetdir}
+    done
+done
+
+# Versioning ----------------------------------------------------------------
+
+echo ${version} > ${pkgdir}/VERSION
+
+# Build Archive -------------------------------------------------------------
+
+tmparchive="${workdir}/tmp.tar.gz"
+tar -C ${workdir} -czf ${tmparchive} ${name}
+
+checksum=$(shasum -a 256 ${tmparchive} | awk '{print substr($1, 1, 12)}')
+archive="${name}.${version}.${GOOS}-${GOARCH}.${checksum}.tar.gz"
+mv ${tmparchive} ${archive}

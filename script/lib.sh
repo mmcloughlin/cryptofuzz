@@ -6,6 +6,11 @@ function heading()
     echo ${sep}
 }
 
+function targets()
+{
+    ls -1 $(local_path "")
+}
+
 function local_path()
 {
     echo -n "target/$1"
@@ -20,6 +25,17 @@ function target_import_path()
 function bin_file()
 {
     echo -n "$(local_path $1)/bin.zip"
+}
+
+function fuzz_files()
+{
+    echo $(bin_file $1)
+    for datadir in corpus crashers suppressions; do
+        datapath="$(local_path $1)/${datadir}"
+        if [ -d ${datapath} ]; then
+            echo $datapath
+        fi
+    done
 }
 
 function package_dir()
