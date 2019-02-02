@@ -1,3 +1,5 @@
+variable "deploy_private_key_path" {}
+
 variable "targets" {
   type = "list"
 

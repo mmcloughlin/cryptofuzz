@@ -51,7 +51,9 @@ data "template_file" "init" {
   template = "${file("init.sh")}"
 
   vars {
-    go_version = "${var.go_version}"
+    target             = "aesgcm"
+    go_version         = "${var.go_version}"
+    deploy_private_key = "${file(var.deploy_private_key_path)}"
   }
 }
 
