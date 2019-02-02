@@ -32,10 +32,6 @@ tar -C $work_dir -xzf $local_archive_path go
 export GOPATH="$gopath"
 export PATH="$PATH:$work_dir/go/bin:$GOPATH/bin"
 
-# Install go-fuzz -----------------------------------------------------------
-
-go get -u github.com/dvyukov/go-fuzz/...
-
 # Clone repository ----------------------------------------------------------
 
 deploy_key_path="$secret/deploy_key"
@@ -49,7 +45,11 @@ EOF
 
 GIT_SSH_COMMAND="ssh -i $deploy_key_path" git clone $repo_clone_url $repo_dir
 
-# Start fuzzer --------------------------------------------------------------
+# Bootstrap -----------------------------------------------------------------
 
 cd $repo_dir
+./script/bootstrap
+
+# Start fuzzer --------------------------------------------------------------
+
 ./script/fuzz $TARGET

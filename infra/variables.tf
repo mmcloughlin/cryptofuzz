@@ -5,6 +5,9 @@ variable "targets" {
 
   default = [
     "aesgcm",
+    "chacha20poly1305",
+    "sha1",
+    "sha256",
     "sha512",
   ]
 }

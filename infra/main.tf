@@ -48,10 +48,11 @@ resource "aws_security_group" "egress_all" {
 }
 
 data "template_file" "init" {
+  count    = "${length(var.targets)}"
   template = "${file("init.sh")}"
 
   vars {
-    target             = "aesgcm"
+    target             = "${var.targets[count.index]}"
     go_version         = "${var.go_version}"
     deploy_private_key = "${file(var.deploy_private_key_path)}"
   }
@@ -63,7 +64,7 @@ resource "aws_instance" "worker" {
   instance_type   = "${var.instance_type}"
   key_name        = "${aws_key_pair.access.key_name}"
   security_groups = ["${aws_security_group.allow_ssh.name}", "${aws_security_group.egress_all.name}"]
-  user_data       = "${data.template_file.init.rendered}"
+  user_data       = "${element(data.template_file.init.*.rendered, count.index)}"
 
   tags = {
     Name = "${var.targets[count.index]}"
