@@ -52,6 +52,7 @@ function package_files_for_arch()
         {{ join .TestGoFiles " "}}
         {{ join .XTestGoFiles " "}}
         {{ join .SFiles " " }}
+        {{ join .HFiles " " }}
     ' ${pkg}
 }
 
