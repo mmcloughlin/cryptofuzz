@@ -1,0 +1,1523 @@
+[
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "A1 Medium", 
+        "vcpus": 1, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "a1.medium"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 195.0, 
+        "intel_turbo": true, 
+        "id": "r4.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Large", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.24xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C4 High-CPU Eight Extra Large", 
+        "vcpus": 36, 
+        "ecu": 132.0, 
+        "intel_turbo": true, 
+        "id": "c4.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Micro", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.micro"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 99.0, 
+        "intel_turbo": true, 
+        "id": "r4.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "H1 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 53.5, 
+        "intel_turbo": true, 
+        "id": "h1.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N 18xlarge", 
+        "vcpus": 72, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.18xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N 9xlarge", 
+        "vcpus": 36, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.9xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Small", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.small"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose Large", 
+        "vcpus": 2, 
+        "ecu": 6.5, 
+        "intel_turbo": true, 
+        "id": "m4.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Large", 
+        "vcpus": 2, 
+        "ecu": 9.0, 
+        "intel_turbo": true, 
+        "id": "c5.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "D2 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 56.0, 
+        "intel_turbo": true, 
+        "id": "d2.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "D2 Eight Extra Large", 
+        "vcpus": 36, 
+        "ecu": 116.0, 
+        "intel_turbo": true, 
+        "id": "d2.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "C1 High-CPU Extra Large", 
+        "vcpus": 8, 
+        "ecu": 20.0, 
+        "intel_turbo": false, 
+        "id": "c1.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Extra Large", 
+        "vcpus": 4, 
+        "ecu": 17.0, 
+        "intel_turbo": true, 
+        "id": "c5.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.5, 
+        "intel_turbo": true, 
+        "id": "r4.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "m4.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "U-9TB1 Metal", 
+        "vcpus": 448, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "u-9tb1.metal"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "D2 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 28.0, 
+        "intel_turbo": true, 
+        "id": "d2.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.12xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 345.0, 
+        "intel_turbo": true, 
+        "id": "m5.24xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU 18xlarge", 
+        "vcpus": 72, 
+        "ecu": 281.0, 
+        "intel_turbo": true, 
+        "id": "c5.18xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": true, 
+        "id": "m4.16xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "General Purpose GPU Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 94.0, 
+        "intel_turbo": true, 
+        "id": "p2.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "U-12TB1 Metal", 
+        "vcpus": 448, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "u-12tb1.metal"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "A1 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "a1.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "P3 Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 94.0, 
+        "intel_turbo": true, 
+        "id": "p3.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A Large", 
+        "vcpus": 2, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 19.0, 
+        "intel_turbo": false, 
+        "id": "r5.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Large", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 27.0, 
+        "intel_turbo": true, 
+        "id": "r4.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M2 High Memory Double Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": false, 
+        "id": "m2.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "D2 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 14.0, 
+        "intel_turbo": true, 
+        "id": "d2.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "A1 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "a1.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M2 High Memory Extra Large", 
+        "vcpus": 2, 
+        "ecu": 6.5, 
+        "intel_turbo": false, 
+        "id": "m2.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": true, 
+        "id": "m4.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M1 General Purpose Medium", 
+        "vcpus": 1, 
+        "ecu": 2.0, 
+        "intel_turbo": false, 
+        "id": "m1.medium"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "A1 Large", 
+        "vcpus": 2, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "a1.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "H1 Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 99.0, 
+        "intel_turbo": true, 
+        "id": "h1.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C4 High-CPU Large", 
+        "vcpus": 2, 
+        "ecu": 8.0, 
+        "intel_turbo": true, 
+        "id": "c4.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 173.0, 
+        "intel_turbo": false, 
+        "id": "r5.12xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 173.0, 
+        "intel_turbo": true, 
+        "id": "m5.12xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M1 General Purpose Extra Large", 
+        "vcpus": 4, 
+        "ecu": 8.0, 
+        "intel_turbo": false, 
+        "id": "m1.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M2 High Memory Quadruple Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": false, 
+        "id": "m2.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 Large", 
+        "vcpus": 2, 
+        "ecu": 10.0, 
+        "intel_turbo": false, 
+        "id": "r5.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Extra Large", 
+        "vcpus": 4, 
+        "ecu": 16.0, 
+        "intel_turbo": true, 
+        "id": "m5.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "G3S Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": false, 
+        "id": "g3s.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "U-6TB1 Metal", 
+        "vcpus": 448, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "u-6tb1.metal"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 53.0, 
+        "intel_turbo": true, 
+        "id": "r4.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Medium", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.medium"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 347.0, 
+        "intel_turbo": false, 
+        "id": "r5.24xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C4 High-CPU Extra Large", 
+        "vcpus": 4, 
+        "ecu": 16.0, 
+        "intel_turbo": true, 
+        "id": "c4.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 68.0, 
+        "intel_turbo": true, 
+        "id": "c5.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Nano", 
+        "vcpus": 1, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.nano"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C4 High-CPU Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 62.0, 
+        "intel_turbo": true, 
+        "id": "c4.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "G3 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 47.0, 
+        "intel_turbo": true, 
+        "id": "g3.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 71.0, 
+        "intel_turbo": false, 
+        "id": "r5.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 34.0, 
+        "intel_turbo": true, 
+        "id": "c5.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.12xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C4 High-CPU Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 31.0, 
+        "intel_turbo": true, 
+        "id": "c4.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Small", 
+        "vcpus": 1, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.small"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "G3 Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 94.0, 
+        "intel_turbo": true, 
+        "id": "g3.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.24xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M1 General Purpose Small", 
+        "vcpus": 1, 
+        "ecu": 1.0, 
+        "intel_turbo": false, 
+        "id": "m1.small"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N Large", 
+        "vcpus": 2, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU 9xlarge", 
+        "vcpus": 36, 
+        "ecu": 141.0, 
+        "intel_turbo": true, 
+        "id": "c5.9xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Cluster Compute Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 88.0, 
+        "intel_turbo": false, 
+        "id": "cc2.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "P3 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": true, 
+        "id": "p3.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 38.0, 
+        "intel_turbo": false, 
+        "id": "r5.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "H1 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": true, 
+        "id": "h1.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "General Purpose GPU 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": true, 
+        "id": "p2.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "C1 High-CPU Medium", 
+        "vcpus": 2, 
+        "ecu": 5.0, 
+        "intel_turbo": false, 
+        "id": "c1.medium"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "R4 High-Memory Large", 
+        "vcpus": 2, 
+        "ecu": 7.0, 
+        "intel_turbo": true, 
+        "id": "r4.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T1 Micro", 
+        "vcpus": 1, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t1.micro"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M1 General Purpose Large", 
+        "vcpus": 2, 
+        "ecu": 4.0, 
+        "intel_turbo": false, 
+        "id": "m1.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "High Storage Eight Extra Large", 
+        "vcpus": 17, 
+        "ecu": 35.0, 
+        "intel_turbo": false, 
+        "id": "hs1.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "G3 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": true, 
+        "id": "g3.16xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 31.0, 
+        "intel_turbo": true, 
+        "id": "m5.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Medium", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.medium"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Large", 
+        "vcpus": 2, 
+        "ecu": 8.0, 
+        "intel_turbo": true, 
+        "id": "m5.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N Extra Large", 
+        "vcpus": 4, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "T2 Micro", 
+        "vcpus": 1, 
+        "ecu": 0, 
+        "intel_turbo": true, 
+        "id": "t2.micro"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 60.0, 
+        "intel_turbo": true, 
+        "id": "m5.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5A Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "r5a.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "General Purpose GPU Extra Large", 
+        "vcpus": 4, 
+        "ecu": 12.0, 
+        "intel_turbo": true, 
+        "id": "p2.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 53.5, 
+        "intel_turbo": true, 
+        "id": "m4.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "A1 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "a1.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5N Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 0.0, 
+        "intel_turbo": true, 
+        "id": "c5n.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "M5A Large", 
+        "vcpus": 2, 
+        "ecu": 0.0, 
+        "intel_turbo": false, 
+        "id": "m5a.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M4 General Purpose Deca Extra Large", 
+        "vcpus": 40, 
+        "ecu": 124.5, 
+        "intel_turbo": true, 
+        "id": "m4.10xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "H1 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "h1.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "P3 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "p3.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "T3 Nano", 
+        "vcpus": 2, 
+        "ecu": 0, 
+        "intel_turbo": false, 
+        "id": "t3.nano"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "M3 General Purpose Large", 
+        "vcpus": 2, 
+        "ecu": 6.5, 
+        "intel_turbo": true, 
+        "id": "m3.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 179.0, 
+        "intel_turbo": true, 
+        "id": "x1e.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "High Memory Cluster Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 88.0, 
+        "intel_turbo": false, 
+        "id": "cr1.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E 32xlarge", 
+        "vcpus": 128, 
+        "ecu": 340.0, 
+        "intel_turbo": true, 
+        "id": "x1e.32xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "M3 General Purpose Medium", 
+        "vcpus": 1, 
+        "ecu": 3.0, 
+        "intel_turbo": true, 
+        "id": "m3.medium"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 23.0, 
+        "intel_turbo": false, 
+        "id": "x1e.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "C3 High-CPU Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 55.0, 
+        "intel_turbo": true, 
+        "id": "c3.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "M3 General Purpose Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": true, 
+        "id": "m3.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "G2 Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 104.0, 
+        "intel_turbo": true, 
+        "id": "g2.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E Extra Large", 
+        "vcpus": 4, 
+        "ecu": 12.0, 
+        "intel_turbo": false, 
+        "id": "x1e.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "X1 Extra High-Memory 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 174.5, 
+        "intel_turbo": false, 
+        "id": "x1.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "C3 High-CPU Large", 
+        "vcpus": 2, 
+        "ecu": 7.0, 
+        "intel_turbo": true, 
+        "id": "c3.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "C3 High-CPU Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 108.0, 
+        "intel_turbo": true, 
+        "id": "c3.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "M3 General Purpose Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "m3.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 47.0, 
+        "intel_turbo": false, 
+        "id": "x1e.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "X1E Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 91.0, 
+        "intel_turbo": true, 
+        "id": "x1e.8xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "X1 Extra High-Memory 32xlarge", 
+        "vcpus": 128, 
+        "ecu": 349.0, 
+        "intel_turbo": false, 
+        "id": "x1.32xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "G2 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "g2.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "C3 High-CPU Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 28.0, 
+        "intel_turbo": true, 
+        "id": "c3.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "C3 High-CPU Extra Large", 
+        "vcpus": 4, 
+        "ecu": 14.0, 
+        "intel_turbo": true, 
+        "id": "c3.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D Extra Large", 
+        "vcpus": 4, 
+        "ecu": 19.0, 
+        "intel_turbo": false, 
+        "id": "r5d.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 60.0, 
+        "intel_turbo": true, 
+        "id": "m5d.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D Extra Large", 
+        "vcpus": 4, 
+        "ecu": 28.0, 
+        "intel_turbo": false, 
+        "id": "z1d.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "R3 High-Memory Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 52.0, 
+        "intel_turbo": true, 
+        "id": "r3.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "I2 Extra Large", 
+        "vcpus": 4, 
+        "ecu": 14.0, 
+        "intel_turbo": true, 
+        "id": "i2.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "R3 High-Memory Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": true, 
+        "id": "r3.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "F1 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 52.0, 
+        "intel_turbo": false, 
+        "id": "f1.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D 6xlarge", 
+        "vcpus": 24, 
+        "ecu": 134.0, 
+        "intel_turbo": false, 
+        "id": "z1d.6xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 53.0, 
+        "intel_turbo": true, 
+        "id": "i3.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "P3DN 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 345.0, 
+        "intel_turbo": true, 
+        "id": "p3dn.24xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 53.0, 
+        "intel_turbo": false, 
+        "id": "z1d.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "I3 High I/O Metal", 
+        "vcpus": 72, 
+        "ecu": 208.0, 
+        "intel_turbo": false, 
+        "id": "i3.metal"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Large", 
+        "vcpus": 2, 
+        "ecu": 9.0, 
+        "intel_turbo": true, 
+        "id": "c5d.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "R3 High-Memory Large", 
+        "vcpus": 2, 
+        "ecu": 6.5, 
+        "intel_turbo": true, 
+        "id": "r3.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 347.0, 
+        "intel_turbo": false, 
+        "id": "r5d.24xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O Large", 
+        "vcpus": 2, 
+        "ecu": 7.0, 
+        "intel_turbo": true, 
+        "id": "i3.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O Extra Large", 
+        "vcpus": 4, 
+        "ecu": 13.0, 
+        "intel_turbo": true, 
+        "id": "i3.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 34.0, 
+        "intel_turbo": true, 
+        "id": "c5d.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "I2 Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 104.0, 
+        "intel_turbo": true, 
+        "id": "i2.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU 9xlarge", 
+        "vcpus": 36, 
+        "ecu": 141.0, 
+        "intel_turbo": true, 
+        "id": "c5d.9xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose 24xlarge", 
+        "vcpus": 96, 
+        "ecu": 345.0, 
+        "intel_turbo": true, 
+        "id": "m5d.24xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 68.0, 
+        "intel_turbo": true, 
+        "id": "c5d.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 200.0, 
+        "intel_turbo": true, 
+        "id": "i3.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "R3 High-Memory Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": true, 
+        "id": "r3.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "F1 16xlarge", 
+        "vcpus": 64, 
+        "ecu": 188.0, 
+        "intel_turbo": false, 
+        "id": "f1.16xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 71.0, 
+        "intel_turbo": false, 
+        "id": "r5d.4xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Large", 
+        "vcpus": 2, 
+        "ecu": 8.0, 
+        "intel_turbo": true, 
+        "id": "m5d.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU Extra Large", 
+        "vcpus": 4, 
+        "ecu": 17.0, 
+        "intel_turbo": true, 
+        "id": "c5d.xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 27.0, 
+        "intel_turbo": true, 
+        "id": "i3.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "F1 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 26.0, 
+        "intel_turbo": false, 
+        "id": "f1.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D Large", 
+        "vcpus": 2, 
+        "ecu": 15.0, 
+        "intel_turbo": false, 
+        "id": "z1d.large"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 173.0, 
+        "intel_turbo": true, 
+        "id": "m5d.12xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D Large", 
+        "vcpus": 2, 
+        "ecu": 10.0, 
+        "intel_turbo": false, 
+        "id": "r5d.large"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 173.0, 
+        "intel_turbo": false, 
+        "id": "r5d.12xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Extra Large", 
+        "vcpus": 4, 
+        "ecu": 16.0, 
+        "intel_turbo": true, 
+        "id": "m5d.xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "R3 High-Memory Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 104.0, 
+        "intel_turbo": true, 
+        "id": "r3.8xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "C5 High-CPU 18xlarge", 
+        "vcpus": 72, 
+        "ecu": 281.0, 
+        "intel_turbo": true, 
+        "id": "c5d.18xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D 12xlarge", 
+        "vcpus": 48, 
+        "ecu": 271.0, 
+        "intel_turbo": false, 
+        "id": "z1d.12xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "R5D Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 38.0, 
+        "intel_turbo": false, 
+        "id": "r5d.2xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "I2 Quadruple Extra Large", 
+        "vcpus": 16, 
+        "ecu": 53.0, 
+        "intel_turbo": true, 
+        "id": "i2.4xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": false, 
+        "name": "Z1D 3xlarge", 
+        "vcpus": 12, 
+        "ecu": 75.0, 
+        "intel_turbo": false, 
+        "id": "z1d.3xlarge"
+    }, 
+    {
+        "avx2": false, 
+        "avx": true, 
+        "name": "I2 Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 27.0, 
+        "intel_turbo": true, 
+        "id": "i2.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "M5 General Purpose Double Extra Large", 
+        "vcpus": 8, 
+        "ecu": 31.0, 
+        "intel_turbo": true, 
+        "id": "m5d.2xlarge"
+    }, 
+    {
+        "avx2": true, 
+        "avx": true, 
+        "name": "I3 High I/O Eight Extra Large", 
+        "vcpus": 32, 
+        "ecu": 99.0, 
+        "intel_turbo": true, 
+        "id": "i3.8xlarge"
+    }
+]

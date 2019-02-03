@@ -32,16 +32,8 @@ variable "coordinator_instance_type" {
   default = "t2.micro"
 }
 
-variable "worker_instance_type" {
-  default = "c5.large"
-}
-
-variable "worker_vcpu" {
-  default = 2
-}
-
-variable "workers_target_vcpu" {
-  default = 16
+variable "workers_target_ecu" {
+  default = 64
 }
 
 variable "coordinator_port" {
