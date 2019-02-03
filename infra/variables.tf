@@ -37,6 +37,10 @@ variable "worker_instance_type" {
   default = "t2.micro"
 }
 
+variable "workers_target_vcpu" {
+  default = 2
+}
+
 variable "coordinator_port" {
   default = 8745
 }

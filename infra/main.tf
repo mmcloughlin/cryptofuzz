@@ -199,22 +199,58 @@ data "template_file" "worker_init" {
   }
 }
 
-resource "aws_instance" "worker" {
-  count         = "${length(var.targets)}"
-  ami           = "${data.aws_ami.bionic.image_id}"
-  instance_type = "${var.worker_instance_type}"
-  key_name      = "${aws_key_pair.access.key_name}"
+resource "aws_iam_role" "fleet_role" {
+  name = "fleet-role"
 
-  security_groups = [
-    "${aws_security_group.allow_ssh.name}",
-    "${aws_security_group.egress_all.name}",
-    "${aws_security_group.worker.name}",
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "spotfleet.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
   ]
+}
+EOF
+}
 
-  user_data            = "${element(data.template_file.worker_init.*.rendered, count.index)}"
-  iam_instance_profile = "${aws_iam_instance_profile.prod_profile.id}"
+resource "aws_iam_role_policy_attachment" "fleet-tagging-role-policy-attachment" {
+  role       = "${aws_iam_role.fleet_role.name}"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2SpotFleetTaggingRole"
+}
 
-  tags = {
-    Name = "${var.targets[count.index]}-worker"
+resource "aws_spot_fleet_request" "workers" {
+  count                       = "${length(var.targets)}"
+  iam_fleet_role              = "${aws_iam_role.fleet_role.arn}"
+  replace_unhealthy_instances = true
+  wait_for_fulfillment        = true
+  target_capacity             = "${var.workers_target_vcpu}"
+  allocation_strategy         = "lowestPrice"
+  fleet_type                  = "maintain"
+
+  launch_specification {
+    ami           = "${data.aws_ami.bionic.image_id}"
+    instance_type = "${var.worker_instance_type}"
+    key_name      = "${aws_key_pair.access.key_name}"
+
+    vpc_security_group_ids = [
+      "${aws_security_group.allow_ssh.id}",
+      "${aws_security_group.egress_all.id}",
+      "${aws_security_group.worker.id}",
+    ]
+
+    user_data            = "${element(data.template_file.worker_init.*.rendered, count.index)}"
+    iam_instance_profile = "${aws_iam_instance_profile.prod_profile.id}"
+
+    tags = {
+      Name = "${var.targets[count.index]}-worker"
+    }
   }
+
+  depends_on = ["aws_iam_role_policy_attachment.fleet-tagging-role-policy-attachment"]
 }
