@@ -9,12 +9,11 @@ variable "targets" {
 
   default = [
     "aesgcm",
+    "chacha20poly1305",
+    "sha1",
+    "sha256",
+    "sha512",
   ]
-
-  # "chacha20poly1305",
-  # "sha1",
-  # "sha256",
-  # "sha512",
 }
 
 variable "region" {
@@ -34,11 +33,15 @@ variable "coordinator_instance_type" {
 }
 
 variable "worker_instance_type" {
-  default = "t2.micro"
+  default = "c5.large"
+}
+
+variable "worker_vcpu" {
+  default = 2
 }
 
 variable "workers_target_vcpu" {
-  default = 2
+  default = 16
 }
 
 variable "coordinator_port" {
