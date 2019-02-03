@@ -63,6 +63,23 @@ resource "aws_security_group" "egress_all" {
   }
 }
 
+resource "aws_security_group" "worker" {
+  name        = "worker"
+  description = "Worker instance."
+}
+
+resource "aws_security_group" "coordinator" {
+  name        = "coordinator"
+  description = "Coordinator instance."
+
+  ingress {
+    from_port       = "${var.coordinator_port}"
+    to_port         = "${var.coordinator_port}"
+    protocol        = "tcp"
+    security_groups = ["${aws_security_group.worker.id}"]
+  }
+}
+
 resource "aws_iam_role" "prod_role" {
   name = "${var.project_name}-prod-role"
 
@@ -114,28 +131,90 @@ resource "aws_iam_instance_profile" "prod_profile" {
   role = "${aws_iam_role.prod_role.name}"
 }
 
-data "template_file" "init" {
+data "template_file" "coordinator_supervisor_config" {
+  count    = "${length(var.targets)}"
+  template = "${file("coordinator.conf")}"
+
+  vars {
+    target     = "${var.targets[count.index]}"
+    deploy_dir = "${local.deploy_dir}"
+    target_dir = "${local.deploy_dir}/target/${var.targets[count.index]}"
+    port       = "${var.coordinator_port}"
+  }
+}
+
+data "template_file" "coordinator_init" {
   count    = "${length(var.targets)}"
   template = "${file("init.sh")}"
 
   vars {
-    target                = "${var.targets[count.index]}"
+    role                  = "${var.targets[count.index]}-coordinator"
     deploy_dir            = "${local.deploy_dir}"
     deploy_package_s3_uri = "s3://${aws_s3_bucket.storage.id}/${aws_s3_bucket_object.package.id}"
-    target_dir            = "${local.deploy_dir}/target/${var.targets[count.index]}"
+    supervisor_config     = "${element(data.template_file.coordinator_supervisor_config.*.rendered, count.index)}"
+  }
+}
+
+resource "aws_instance" "coordinator" {
+  count         = "${length(var.targets)}"
+  ami           = "${data.aws_ami.bionic.image_id}"
+  instance_type = "${var.coordinator_instance_type}"
+  key_name      = "${aws_key_pair.access.key_name}"
+
+  security_groups = [
+    "${aws_security_group.allow_ssh.name}",
+    "${aws_security_group.egress_all.name}",
+    "${aws_security_group.coordinator.name}",
+  ]
+
+  user_data            = "${element(data.template_file.coordinator_init.*.rendered, count.index)}"
+  iam_instance_profile = "${aws_iam_instance_profile.prod_profile.id}"
+
+  tags = {
+    Name = "${var.targets[count.index]}-coordinator"
+  }
+}
+
+data "template_file" "worker_supervisor_config" {
+  count    = "${length(var.targets)}"
+  template = "${file("worker.conf")}"
+
+  vars {
+    target           = "${var.targets[count.index]}"
+    deploy_dir       = "${local.deploy_dir}"
+    target_dir       = "${local.deploy_dir}/target/${var.targets[count.index]}"
+    coordinator_addr = "${aws_instance.coordinator.private_ip}:${var.coordinator_port}"
+  }
+}
+
+data "template_file" "worker_init" {
+  count    = "${length(var.targets)}"
+  template = "${file("init.sh")}"
+
+  vars {
+    role                  = "${var.targets[count.index]}-worker"
+    deploy_dir            = "${local.deploy_dir}"
+    deploy_package_s3_uri = "s3://${aws_s3_bucket.storage.id}/${aws_s3_bucket_object.package.id}"
+    supervisor_config     = "${element(data.template_file.worker_supervisor_config.*.rendered, count.index)}"
   }
 }
 
 resource "aws_instance" "worker" {
-  count                = "${length(var.targets)}"
-  ami                  = "${data.aws_ami.bionic.image_id}"
-  instance_type        = "${var.instance_type}"
-  key_name             = "${aws_key_pair.access.key_name}"
-  security_groups      = ["${aws_security_group.allow_ssh.name}", "${aws_security_group.egress_all.name}"]
-  user_data            = "${element(data.template_file.init.*.rendered, count.index)}"
+  count         = "${length(var.targets)}"
+  ami           = "${data.aws_ami.bionic.image_id}"
+  instance_type = "${var.worker_instance_type}"
+  key_name      = "${aws_key_pair.access.key_name}"
+
+  security_groups = [
+    "${aws_security_group.allow_ssh.name}",
+    "${aws_security_group.egress_all.name}",
+    "${aws_security_group.worker.name}",
+  ]
+
+  user_data            = "${element(data.template_file.worker_init.*.rendered, count.index)}"
   iam_instance_profile = "${aws_iam_instance_profile.prod_profile.id}"
 
   tags = {
-    Name = "${var.targets[count.index]}"
+    Name = "${var.targets[count.index]}-worker"
   }
 }

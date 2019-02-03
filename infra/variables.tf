@@ -29,6 +29,14 @@ variable "public_key_path" {
   default = "~/.ssh/id_rsa.pub"
 }
 
-variable "instance_type" {
+variable "coordinator_instance_type" {
   default = "t2.micro"
+}
+
+variable "worker_instance_type" {
+  default = "t2.micro"
+}
+
+variable "coordinator_port" {
+  default = 8745
 }
