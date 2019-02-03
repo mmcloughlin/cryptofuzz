@@ -1,19 +1,20 @@
-variable "deploy_private_key_path" {}
+variable "package_path" {}
+
+variable "project_name" {
+  default = "cryptofuzz"
+}
 
 variable "targets" {
   type = "list"
 
   default = [
     "aesgcm",
-    "chacha20poly1305",
-    "sha1",
-    "sha256",
-    "sha512",
   ]
-}
 
-variable "go_version" {
-  default = "1.11.5"
+  # "chacha20poly1305",
+  # "sha1",
+  # "sha256",
+  # "sha512",
 }
 
 variable "region" {
@@ -21,7 +22,7 @@ variable "region" {
 }
 
 variable "key_name" {
-  default = "cryptofuzz"
+  default = "personal"
 }
 
 variable "public_key_path" {

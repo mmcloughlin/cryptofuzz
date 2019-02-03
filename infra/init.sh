@@ -1,55 +1,37 @@
 #!/bin/bash -e
 
-# Terraform template variables ----------------------------------------------
-
-GO_VERSION=${go_version}
-DEPLOY_KEY="${deploy_private_key}"
-TARGET="${target}"
-
-# Local variables -----------------------------------------------------------
-
-repo_import_path="github.com/mmcloughlin/cryptofuzz"
-repo_clone_url="git@github.com:mmcloughlin/cryptofuzz.git"
-
-work_dir="/opt/fuzz"
-gopath="$work_dir/gopath"
-secret="$work_dir/secret"
-repo_dir="$gopath/src/$repo_import_path"
-
 # Setup Working Directory ---------------------------------------------------
 
-mkdir -p $work_dir $secret $repo_dir
+mkdir -p ${deploy_dir}
+tmp_dir=$(mktemp -d)
 
-# Install Go ----------------------------------------------------------------
+# Install Required Packages -------------------------------------------------
 
-go_archive="go$GO_VERSION.linux-amd64.tar.gz"
-go_download_url="https://dl.google.com/go/$go_archive"
-local_archive_path="/tmp/$go_archive"
+apt-get update
+apt-get install -y awscli supervisor
 
-wget -O $local_archive_path $go_download_url
-tar -C $work_dir -xzf $local_archive_path go
+# Download and Unpack Deploy Package ----------------------------------------
 
-export GOPATH="$gopath"
-export PATH="$PATH:$work_dir/go/bin:$GOPATH/bin"
+package_name=$(basename ${deploy_package_s3_uri})
+package_path="$tmp_dir/$package_name"
 
-# Clone repository ----------------------------------------------------------
+aws s3 cp ${deploy_package_s3_uri} $package_path
 
-deploy_key_path="$secret/deploy_key"
-echo -n "$DEPLOY_KEY" > $deploy_key_path
-chmod 0400 $deploy_key_path
+tar xzf $package_path --strip-components=1 -C ${deploy_dir}
 
-# add github to known hosts (https://help.github.com/articles/github-s-ssh-key-fingerprints/)
-cat > ~/.ssh/known_hosts <<EOF
-github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+# Configure Supervisor Processes --------------------------------------------
+
+cat > /etc/supervisor/conf.d/${target}.conf <<EOF
+[program:${target}]
+command=${deploy_dir}/bin/go-fuzz -bin=${target_dir}/bin.zip -workdir=${target_dir}
+process_name=${target}
+autostart=true
+stdout_logfile=${target_dir}/stdout
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=2
+stderr_logfile=${target_dir}/stderr
+stderr_logfile_maxbytes=1MB
+stderr_logfile_backups=2
 EOF
 
-GIT_SSH_COMMAND="ssh -i $deploy_key_path" git clone $repo_clone_url $repo_dir
-
-# Bootstrap -----------------------------------------------------------------
-
-cd $repo_dir
-./script/bootstrap
-
-# Start fuzzer --------------------------------------------------------------
-
-./script/fuzz $TARGET
+supervisorctl reload
