@@ -52,17 +52,39 @@ func Curve(data []byte, c elliptic.Curve) int {
 	ref := c.Params()
 	n := ref.BitSize / 8
 
+	// ScalarBaseMult
 	if len(data) < n {
 		return -1
 	}
-
 	s := data[:n]
+	data = data[n:]
 
 	x, y := c.ScalarBaseMult(s)
 	rx, ry := ref.ScalarBaseMult(s)
 
 	if x.Cmp(rx) != 0 || y.Cmp(ry) != 0 {
 		panic("mismatch ScalarBaseMult")
+	}
+
+	// ScalarMult
+	if len(data) < n {
+		return -1
+	}
+	s = data[:n]
+	data = data[n:]
+
+	x, y = c.ScalarMult(x, y, s)
+	rx, ry = ref.ScalarMult(rx, ry, s)
+
+	if x.Cmp(rx) != 0 || y.Cmp(ry) != 0 {
+		panic("mismatch ScalarMult")
+	}
+
+	// Confirm Add and Double have expected properties.
+	ax, ay := c.Add(x, y, x, y)
+	dx, dy := c.Double(x, y)
+	if ax.Cmp(dx) != 0 || ay.Cmp(dy) != 0 {
+		panic("mismatch between Add and Double")
 	}
 
 	return 0
