@@ -3,6 +3,7 @@ package fuzz
 
 import (
 	"bytes"
+	"crypto/elliptic"
 	"encoding/binary"
 	"hash"
 	"io"
@@ -41,6 +42,27 @@ func Hash(data []byte, a, b hash.Hash) int {
 
 	if !bytes.Equal(asum, bsum) {
 		panic("mismatch")
+	}
+
+	return 0
+}
+
+// Curve compares c to its generic implementation on the given fuzz data.
+func Curve(data []byte, c elliptic.Curve) int {
+	ref := c.Params()
+	n := ref.BitSize / 8
+
+	if len(data) < n {
+		return -1
+	}
+
+	s := data[:n]
+
+	x, y := c.ScalarBaseMult(s)
+	rx, ry := ref.ScalarBaseMult(s)
+
+	if x.Cmp(rx) != 0 || y.Cmp(ry) != 0 {
+		panic("mismatch ScalarBaseMult")
 	}
 
 	return 0
