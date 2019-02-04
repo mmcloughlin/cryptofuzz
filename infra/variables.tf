@@ -33,7 +33,7 @@ variable "coordinator_instance_type" {
 }
 
 variable "workers_target_ecu" {
-  default = 64
+  default = 8
 }
 
 variable "coordinator_port" {
