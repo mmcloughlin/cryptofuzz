@@ -8,12 +8,14 @@ variable "targets" {
   type = "list"
 
   default = [
-    "aesgcm",
-    "chacha20poly1305",
-    "sha1",
-    "sha256",
-    "sha512",
+    # "sha1",
+    # "sha256",
+    # "sha512",
+    "p256",
   ]
+
+  # "aesgcm",
+  #"chacha20poly1305",
 }
 
 variable "region" {
@@ -33,7 +35,7 @@ variable "coordinator_instance_type" {
 }
 
 variable "workers_target_ecu" {
-  default = 8
+  default = 4
 }
 
 variable "coordinator_port" {

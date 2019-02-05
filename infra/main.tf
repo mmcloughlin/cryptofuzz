@@ -116,6 +116,7 @@ resource "aws_iam_role_policy" "prod_role_policy" {
     {
       "Effect": "Allow",
       "Action": [
+        "s3:PutObject",
         "s3:GetObject",
         "s3:ListObjects"
       ],
@@ -136,10 +137,11 @@ data "template_file" "coordinator_supervisor_config" {
   template = "${file("coordinator.conf")}"
 
   vars {
-    target     = "${var.targets[count.index]}"
-    deploy_dir = "${local.deploy_dir}"
-    target_dir = "${local.deploy_dir}/target/${var.targets[count.index]}"
-    port       = "${var.coordinator_port}"
+    target       = "${var.targets[count.index]}"
+    deploy_dir   = "${local.deploy_dir}"
+    target_dir   = "${local.deploy_dir}/target/${var.targets[count.index]}"
+    port         = "${var.coordinator_port}"
+    state_s3_uri = "s3://${aws_s3_bucket.storage.id}/state"
   }
 }
 
