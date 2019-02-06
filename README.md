@@ -1,6 +1,6 @@
 # cryptofuzz
 
-Fuzzing Go crypto against reference implementations.
+Fuzzing Go crypto with [`go-fuzz`](https://github.com/dvyukov/go-fuzz).
 
 ## Targets
 
