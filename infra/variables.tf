@@ -8,14 +8,9 @@ variable "targets" {
   type = "list"
 
   default = [
-    # "sha1",
-    # "sha256",
-    # "sha512",
     "p256",
+    "sha3",
   ]
-
-  # "aesgcm",
-  #"chacha20poly1305",
 }
 
 variable "region" {
