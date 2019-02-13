@@ -1,8 +1,9 @@
 #!/bin/bash -ex
 
 target=$1
+shift
 
 source script/lib.sh
 
 script/build ${target}
-go-fuzz -bin=$(bin_file ${target}) -workdir=$(local_path ${target})
+go-fuzz -bin=$(bin_file ${target}) -workdir=$(local_path ${target}) "$@"
