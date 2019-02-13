@@ -1,10 +1,6 @@
 language: go
 go:
 - 1.x
-addons:
-  apt:
-    packages:
-    - parallel
 install:
 - ./script/bootstrap
 script:
