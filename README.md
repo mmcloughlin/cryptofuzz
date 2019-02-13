@@ -14,6 +14,7 @@ Fuzzers compare assembly implementations to the corresponding pure Go versions.
 * [sha256](target/sha256): `crypto/sha256`
 * [sha512](target/sha512): `crypto/sha512`
 * [sha3](target/sha3): `x/crypto/sha3`
+* [blake2b](target/blake2b): `x/crypto/blake2b`
 
 ## Quick Start
 
