@@ -1,0 +1,5 @@
+#!/bin/bash -ex
+
+source script/lib.sh
+
+targets | parallel --line-buffer ./script/fuzz {} "$@"
