@@ -16,6 +16,7 @@ Fuzzers compare assembly implementations to the corresponding pure Go versions.
 * [sha3](target/sha3): `x/crypto/sha3`
 * [blake2b](target/blake2b): `x/crypto/blake2b`
 * [blake2s](target/blake2s): `x/crypto/blake2s`
+* [argon2](target/argon2): `x/crypto/argon2`
 
 ## Quick Start
 
