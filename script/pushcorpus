@@ -1,0 +1,7 @@
+#!/bin/bash -ex
+
+git checkout master
+git pull
+git add target/*/corpus
+git commit -m 'target: more corpus'
+git push
