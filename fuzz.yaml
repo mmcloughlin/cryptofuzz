@@ -1,0 +1,12 @@
+base: ubuntu:16.04
+language: go
+version: "1.11"
+checkout: github.com/mmcloughlin/cryptofuzz
+setup:
+  - ./script/bootstrap
+targets:
+  - name: sha1
+    corpus: .target/sha1/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz
