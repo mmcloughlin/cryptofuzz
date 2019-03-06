@@ -9,4 +9,4 @@ targets:
     corpus: ./target/sha1/corpus
     harness:
       function: Fuzz
-      package: github.com/mmcloughlin/cryptofuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/sha1
