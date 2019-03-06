@@ -6,7 +6,7 @@ setup:
   - ./script/bootstrap
 targets:
   - name: sha1
-    corpus: .target/sha1/corpus
+    corpus: ./target/sha1/corpus
     harness:
       function: Fuzz
       package: github.com/mmcloughlin/cryptofuzz
