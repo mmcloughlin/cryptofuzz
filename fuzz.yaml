@@ -3,7 +3,7 @@ language: go
 version: "1.11"
 checkout: github.com/mmcloughlin/cryptofuzz
 setup:
-  - ./script/bootstrap
+  - go get -u golang.org/x/crypto/... golang.org/x/sys/... 
 targets:
   - name: sha1
     corpus: ./target/sha1/corpus
