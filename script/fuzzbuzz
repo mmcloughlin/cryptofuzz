@@ -1,0 +1,27 @@
+#!/bin/bash -e
+
+source script/lib.sh
+
+{
+
+cat <<EOF
+base: ubuntu:16.04
+language: go
+version: "1.11"
+checkout: github.com/mmcloughlin/cryptofuzz
+setup:
+  - go get -u golang.org/x/crypto/... golang.org/x/sys/... 
+targets:
+EOF
+
+for target in $(targets); do
+    cat <<EOF
+  - name: ${target}
+    corpus: ./target/${target}/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/${target}
+EOF
+done
+
+} > fuzz.yaml

@@ -5,8 +5,63 @@ checkout: github.com/mmcloughlin/cryptofuzz
 setup:
   - go get -u golang.org/x/crypto/... golang.org/x/sys/... 
 targets:
+  - name: aesgcm
+    corpus: ./target/aesgcm/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/aesgcm
+  - name: argon2
+    corpus: ./target/argon2/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/argon2
+  - name: blake2b
+    corpus: ./target/blake2b/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/blake2b
+  - name: blake2s
+    corpus: ./target/blake2s/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/blake2s
+  - name: chacha20poly1305
+    corpus: ./target/chacha20poly1305/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/chacha20poly1305
+  - name: curve25519
+    corpus: ./target/curve25519/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/curve25519
+  - name: p256
+    corpus: ./target/p256/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/p256
+  - name: poly1305
+    corpus: ./target/poly1305/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/poly1305
   - name: sha1
     corpus: ./target/sha1/corpus
     harness:
       function: Fuzz
       package: github.com/mmcloughlin/cryptofuzz/target/sha1
+  - name: sha256
+    corpus: ./target/sha256/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/sha256
+  - name: sha3
+    corpus: ./target/sha3/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/sha3
+  - name: sha512
+    corpus: ./target/sha512/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/sha512
