@@ -18,6 +18,7 @@ Fuzzers compare assembly implementations to the corresponding pure Go versions.
 * [blake2s](target/blake2s): `x/crypto/blake2s`
 * [argon2](target/argon2): `x/crypto/argon2`
 * [poly1305](target/poly1305): `x/crypto/poly1305`
+* [salsa20](target/salsa20): `x/crypto/salsa20`
 
 ## Quick Start
 
