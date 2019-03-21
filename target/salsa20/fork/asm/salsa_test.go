@@ -4,7 +4,11 @@
 
 package salsa
 
-import "testing"
+import (
+	"bytes"
+	"encoding/binary"
+	"testing"
+)
 
 func TestCore208(t *testing.T) {
 	in := [64]byte{
@@ -51,4 +55,26 @@ func TestOutOfBoundsWrite(t *testing.T) {
 		}
 	}()
 	XORKeyStream(plainText[:3], cipherText, &counter, &key)
+}
+
+func TestXORKeyStream32BitCounter(t *testing.T) {
+	var counter [16]byte
+	var key [32]byte
+
+	ic := uint64(1) << 32
+	for n := 1; n <= 128; n *= 2 {
+		// Produce the given number of blocks of key, with initial counter ic.
+		binary.LittleEndian.PutUint64(counter[8:], ic)
+		a := make([]byte, 64*2*n)
+		XORKeyStream(a, a, &counter, &key)
+
+		// Start half way through.
+		binary.LittleEndian.PutUint64(counter[8:], ic+uint64(n))
+		b := make([]byte, 64*n)
+		XORKeyStream(b, b, &counter, &key)
+
+		if !bytes.Equal(a[64*n:], b) {
+			t.Errorf("mismatch: key generated starting at %#x disagrees with key starting at %#x", ic, ic+uint64(n))
+		}
+	}
 }
