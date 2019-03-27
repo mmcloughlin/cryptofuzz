@@ -2,6 +2,11 @@
 
 Fuzzing Go crypto with [`go-fuzz`](https://github.com/dvyukov/go-fuzz).
 
+## Discoveries
+
+* `salsa20` counter increment vulnerability: [announcement](https://groups.google.com/forum/#!topic/golang-dev/1X7VG7FDw2A): [patch](https://github.com/golang/crypto/commit/b7391e95e576cacdcdd422573063bc057239113d), [investigation](https://github.com/mmcloughlin/bugsalsa), [discussion](https://twitter.com/FiloSottile/status/1108569374343000064), [rebuttal](https://twitter.com/hashbreaker/status/1108637226089496577)
+* `curve25519` missing input mask: [#30095](https://golang.org/issue/30095), [patch](https://github.com/golang/crypto/commit/193df9c0f06f8bb35fba505183eaf0acc0136505)
+
 ## Targets
 
 Fuzzers compare assembly implementations to the corresponding pure Go versions.
