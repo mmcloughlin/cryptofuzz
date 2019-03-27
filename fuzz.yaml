@@ -45,6 +45,11 @@ targets:
     harness:
       function: Fuzz
       package: github.com/mmcloughlin/cryptofuzz/target/poly1305
+  - name: salsa20
+    corpus: ./target/salsa20/corpus
+    harness:
+      function: Fuzz
+      package: github.com/mmcloughlin/cryptofuzz/target/salsa20
   - name: sha1
     corpus: ./target/sha1/corpus
     harness:
