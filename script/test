@@ -2,7 +2,7 @@
 
 source script/lib.sh
 
-targets | while read target; do
+alltargets | while read target; do
     script/build ${target}
     timeout --preserve-status --signal=INT 10s \
         go-fuzz -bin=$(bin_file ${target}) -workdir=$(local_path ${target})

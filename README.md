@@ -25,6 +25,10 @@ Fuzzers compare assembly implementations to the corresponding pure Go versions.
 * [poly1305](target/poly1305): `x/crypto/poly1305`
 * [salsa20](target/salsa20): `x/crypto/salsa20`
 
+Experimental:
+
+* [exp/litpoly1305](target/exp/litpoly1305): Filippo Valsorda's ["literate" `poly1305`](https://blog.filippo.io/a-literate-go-implementation-of-poly1305/) ([CL #169037](https://golang.org/cl/169037))
+
 ## Quick Start
 
 Install dependencies with

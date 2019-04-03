@@ -6,9 +6,17 @@ function heading()
     echo ${sep}
 }
 
+function alltargets()
+{
+    find target -name fuzz.go | while read path; do
+        path=${path#target/}
+        echo ${path%/fuzz.go}
+    done
+}
+
 function targets()
 {
-    ls -1 $(local_path "")
+    alltargets | awk '$1 !~ "^exp/"'
 }
 
 function local_path()
