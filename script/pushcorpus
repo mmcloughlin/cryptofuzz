@@ -2,6 +2,6 @@
 
 git checkout master
 git pull
-git add target/*/corpus
+find target -path '*/corpus/*' | xargs git add
 git commit -m 'target: more corpus'
 git push
